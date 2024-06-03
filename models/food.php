@@ -1,25 +1,29 @@
 <?php 
 
-class Foods{
-    private string $price;
+require_once __DIR__ . "/products.php";
+
+class Foods extends Products {
+
+    private string $cost;
     private string $weight;
-  
-    public function __construct(string $price, string $weight) {
-      
-      $this->price          = $price;
-      $this->weight         = $weight;
+
+    public function __construct(string $name, string $producer, string $target, string $cost, string $weight) {
+        
+        parent::__construct($name, $producer, $target);
+
+        $this->cost           = $cost;
+        $this->weight         = $weight;
     }
 
-    
 
     /**
-     * Get the value of price
+     * Get the value of cost
      *
      * @return string
      */
-    public function getPrice()
+    public function getCost(): string
     {
-        return $this->price;
+        return $this->cost;
     }
 
     /**
@@ -27,23 +31,8 @@ class Foods{
      *
      * @return string
      */
-    public function getWeight()
+    public function getWeight(): string
     {
         return $this->weight;
-    }
-
-
-    /**
-     * Set the value of price
-     *
-     * @param string $price
-     *
-     * @return self
-     */
-    public function setPrice(string $price)
-    {
-        $this->price = $price;
-
-        return $this;
     }
 }

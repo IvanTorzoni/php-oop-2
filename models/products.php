@@ -1,21 +1,17 @@
 <?php
 
-require_once __DIR__ . "/food.php";
-
 class Products
 {
 
     private string $name;
     private string $producer;
     private string $target;
-    public Foods $food;
 
-    public function __construct(string $name, string $producer, string $target, Foods $food)
+    public function __construct(string $name, string $producer, string $target)
     {
         $this->name         = $name;
         $this->producer     = $producer;
         $this->target       = $target;
-        $this->food         = $food;
     }
 
     /**
