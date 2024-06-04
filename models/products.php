@@ -1,8 +1,11 @@
 <?php
 
+require_once __DIR__ . "/../traits/edible.php";
 class Products
 {
 
+    use Edible;
+    
     private string $name;
     private string $producer;
     private string $target;
