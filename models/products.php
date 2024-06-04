@@ -6,6 +6,7 @@ class Products
     private string $name;
     private string $producer;
     private string $target;
+    private int $quantity;
 
     public function __construct(string $name, string $producer, string $target)
     {
@@ -42,5 +43,27 @@ class Products
     public function getTarget()
     {
         return $this->target;
+    }
+
+    /**
+     * Get the value of quantity
+     *
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Set the value of quantity
+     *
+     * @param int $quantity
+     */
+    public function setQuantity(int $quantity) {
+        if ($quantity <= 0) {
+            throw new Exception("Pezzi esauriti");
+        }
+        $this->quantity = $quantity;
     }
 }
